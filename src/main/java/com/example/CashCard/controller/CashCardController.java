@@ -12,7 +12,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/cashcards")
-public class CashCardController {
+class CashCardController {
 
     private final CashCardRepository cashCardRepository;
 
@@ -20,7 +20,7 @@ public class CashCardController {
         this.cashCardRepository = cashCardRepository;
     }
 
-    @PostMapping
+    @PostMapping()
     public ResponseEntity<Void> createCashCard(@RequestBody CashCard newCashCard) {
         CashCard savedCashCard = cashCardRepository.save(newCashCard);
         URI location = ServletUriComponentsBuilder.fromCurrentRequest()

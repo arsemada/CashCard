@@ -1,6 +1,5 @@
 package com.example.CashCard.entity;
 
-import aj.org.objectweb.asm.commons.GeneratorAdapter;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -20,13 +19,13 @@ public class CashCard {
     private LocalDate issueDate;
     private LocalDate expiryDate;
     private String parentName;
-    private GeneratorAdapter Foo;
 
     public CashCard() {
     }
 
     public CashCard(String kidName, BigDecimal balance, LocalDate issueDate, LocalDate expiryDate, String parentName) {
         this.kidName = kidName;
+        this.balance = balance;
         this.issueDate = issueDate;
         this.expiryDate = expiryDate;
         this.parentName = parentName;
@@ -84,7 +83,7 @@ public class CashCard {
 
     @Override
     public String toString() {
-        java.lang.String string = "CashCard{" +
+        return "CashCard{" +
                 "id=" + id +
                 ", kidName='" + kidName + '\'' +
                 ", balance=" + balance +
@@ -92,6 +91,5 @@ public class CashCard {
                 ", expiryDate=" + expiryDate +
                 ", parentName='" + parentName + '\'' +
                 '}';
-        return string.valueOf(Foo);
     }
 }
